@@ -1,0 +1,25 @@
+/* CSS Variables and Theme System */
+:root {
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #111;
+    --bg-tertiary: #1a1a1a;
+    --text-primary: #fff;
+    --text-secondary: #a0a0a0;
+    --text-dark: #333;
+    --card-bg: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+    --border-color: rgba(102, 126, 234, 0.1);
+    --accent-primary: #667eea;
+    --accent-secondary: #764ba2;
+}
+
+/* Light Theme */
+body.light-theme {
+    --bg-primary: #f8f9fa;
+    --bg-secondary: #ffffff;
+    --bg-tertiary: #e9ecef;
+    --text-primary: #212529;
+    --text-secondary: #6c757d;
+    --text-dark: #333;
+    --card-bg: linear-gradient(145deg, #ffffff, #f8f9fa);
+    --border-color: rgba(102, 126, 234, 0.2);
+}
