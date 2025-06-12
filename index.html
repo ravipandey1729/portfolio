@@ -6,7 +6,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>    <!-- Navigation -->
+<body>    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress"></div>
+
+    <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
@@ -122,20 +125,13 @@
             <div class="section-header">
                 <h2 class="section-title">Skills</h2>
                 <p class="section-subtitle">Technologies and expertise I work with</p>
-            </div>
-            <div class="skills-grid">
+            </div>            <div class="skills-grid">
                 <div class="skill-card" data-skill="c-cpp">
                     <div class="skill-icon">
                         <i class="fab fa-cuttlefish"></i>
                     </div>
                     <h3>C/C++</h3>
                     <p>System programming, data structures, and algorithmic problem solving</p>
-                    <div class="skill-level">
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 85%"></div>
-                        </div>
-                        <span>85%</span>
-                    </div>
                 </div>
                 
                 <div class="skill-card" data-skill="web-dev">
@@ -143,13 +139,7 @@
                         <i class="fas fa-code"></i>
                     </div>
                     <h3>Web Development</h3>
-                    <p>Modern web technologies including HTML, CSS, JavaScript, and frameworks</p>
-                    <div class="skill-level">
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 80%"></div>
-                        </div>
-                        <span>80%</span>
-                    </div>
+                    <p>Building modern web applications and websites using AI-powered development tools and techniques</p>
                 </div>
                 
                 <div class="skill-card" data-skill="android">
@@ -157,13 +147,7 @@
                         <i class="fab fa-android"></i>
                     </div>
                     <h3>Android Development</h3>
-                    <p>Native Android app development with Java and modern Android technologies</p>
-                    <div class="skill-level">
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 75%"></div>
-                        </div>
-                        <span>75%</span>
-                    </div>
+                    <p>Creating mobile applications for Android platforms leveraging AI-assisted development methodologies</p>
                 </div>
                 
                 <div class="skill-card" data-skill="marketing">
@@ -172,12 +156,6 @@
                     </div>
                     <h3>Marketing</h3>
                     <p>Digital marketing strategies, brand promotion, and market analysis</p>
-                    <div class="skill-level">
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 70%"></div>
-                        </div>
-                        <span>70%</span>
-                    </div>
                 </div>
                 
                 <div class="skill-card" data-skill="sales">
@@ -186,46 +164,171 @@
                     </div>
                     <h3>Sales</h3>
                     <p>Sales strategies, client relationship management, and business development</p>
-                    <div class="skill-level">
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 78%"></div>
-                        </div>
-                        <span>78%</span>
-                    </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Projects Section (Placeholder) -->
+    </section>    <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Projects</h2>
-                <p class="section-subtitle">Coming Soon - Showcase of my work</p>
+                <p class="section-subtitle">Innovative solutions and creative endeavors</p>
             </div>
-            <div class="projects-placeholder">
-                <div class="placeholder-content">
-                    <i class="fas fa-tools"></i>
-                    <h3>Projects Section</h3>
-                    <p>This section will showcase my amazing projects. Stay tuned!</p>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <div class="project-status">
+                            <span class="status-badge in-progress">In Progress</span>
+                        </div>
+                    </div>
+                    <h3>Hoppin</h3>
+                    <p class="project-subtitle">My Own Startup Venture</p>
+                    <p class="project-description">
+                        A revolutionary peer-to-peer ride sharing platform built with React Native, designed to significantly 
+                        reduce daily commuting costs and fuel expenses for students who own vehicles. This innovative solution 
+                        transforms the way students share transportation resources while building a sustainable community network.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">React Native</span>
+                        <span class="tech-tag">android</span>
+                        <span class="tech-tag">Sharing mobility</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="project-status">
+                            <span class="status-badge completed">Completed</span>
+                        </div>
+                    </div>
+                    <h3>Herbinnova</h3>
+                    <p class="project-subtitle">Ayurvedic Wellness Platform</p>
+                    <a href="https://www.herbinnova.in" class="project-link" target="_blank">
+                        <i class="www.herbinnova.in"></i> Visit Website
+                    </a>
+                    <p class="project-description">
+                        A comprehensive wellness website that bridges ancient Ayurvedic wisdom with modern scientific approaches. 
+                        Herbinnova empowers users to transform their health naturally through personalized holistic wellness 
+                        solutions, creating a perfect harmony between traditional healing practices and contemporary lifestyle needs.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Web Development</span>
+                        <span class="tech-tag">Healthcare</span>
+                        <span class="tech-tag">Ayurveda</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <div class="project-status">
+                            <span class="status-badge completed">Completed</span>
+                        </div>
+                    </div>
+                    <h3>Doughnut Delight</h3>
+                    <p class="project-subtitle">3D Animated Commercial</p>
+                    <p class="project-description">
+                        An immersive 3D animated commercial showcasing advanced proficiency in modeling, animation, and 
+                        rendering techniques. This project demonstrates exceptional attention to detail and artistic vision, 
+                        combining technical expertise with creative storytelling to produce visually captivating content 
+                        that engages and delights audiences.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">3D Modeling</span>
+                        <span class="tech-tag">Animation</span>
+                        
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Experience Section (Placeholder) -->
+    </section>    <!-- Experience Section -->
     <section id="experience" class="experience">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Experience</h2>
-                <p class="section-subtitle">Coming Soon - My professional journey</p>
-            </div>
-            <div class="experience-placeholder">
-                <div class="placeholder-content">
-                    <i class="fas fa-briefcase"></i>
-                    <h3>Experience Section</h3>
-                    <p>This section will detail my professional experience and achievements. Stay tuned!</p>
+                <p class="section-subtitle">Professional journey and leadership achievements</p>
+            </div>            <div class="experience-timeline">
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <div class="experience-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="experience-period">
+                            <span class="period-badge current">Present</span>
+                        </div>
+                    </div>
+                    <h3>Founder & CEO</h3>
+                    <p class="experience-subtitle">Hoppin - Startup Venture</p>
+                    <p class="experience-description">
+                        Embarked on an entrepreneurial journey as the visionary founder of Hoppin, a revolutionary 
+                        peer-to-peer ride-sharing platform. Currently spearheading the development of an innovative 
+                        solution that maximizes underutilized transportation resources to transform the travel experience. 
+                        This venture represents the convergence of technological innovation and sustainable mobility, 
+                        driven by a commitment to learning, growth, and creating meaningful impact in the transportation sector.
+                    </p>
+                    <div class="experience-achievements">
+                        <span class="achievement-tag">Startup Founder</span>
+                        <span class="achievement-tag">Product Development</span>
+                        <span class="achievement-tag">Innovation Leadership</span>
+                    </div>
+                </div>
+
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <div class="experience-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="experience-period">
+                            <span class="period-badge current">Present</span>
+                        </div>
+                    </div>
+                    <h3>Club Head & Sponsorship Lead</h3>
+                    <p class="experience-subtitle">Engineering India Club</p>
+                    <p class="experience-description">
+                        Led a prestigious collaborative initiative spanning multiple engineering colleges across Nagpur, 
+                        dedicated to fostering social skill development among students. As both Club Head and Sponsorship 
+                        Lead, orchestrated cross-institutional programs that enhanced interpersonal communication, 
+                        leadership capabilities, and professional networking skills. This role strengthened the engineering 
+                        community bond while creating valuable opportunities for holistic student development beyond technical education.
+                    </p>
+                    <div class="experience-achievements">
+                        <span class="achievement-tag">Multi-College Leadership</span>
+                        <span class="achievement-tag">Social Skills Development</span>
+                        <span class="achievement-tag">Community Building</span>
+                    </div>
+                </div>
+
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <div class="experience-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <div class="experience-period">
+                            <span class="period-badge">2024</span>
+                        </div>
+                    </div>
+                    <h3>Strategic Sponsorship Manager</h3>
+                    <p class="experience-subtitle">College Technical Event Leadership</p>
+                    <p class="experience-description">
+                        Orchestrated a comprehensive sponsorship campaign that successfully secured partnerships with 
+                        industry-leading companies including Toyota, TATA, MG, Ather Energy, and Fifth Try. Through 
+                        strategic networking and persuasive negotiation, raised over ₹60,000 in sponsorship funding 
+                        for our college's premier technical event. This achievement showcased exceptional relationship-building 
+                        capabilities and demonstrated the ability to connect academic initiatives with corporate partnerships.
+                    </p>
+                    <div class="experience-achievements">
+                        <span class="achievement-tag">₹60,000+ Raised</span>
+                        <span class="achievement-tag">5 Major Sponsors</span>
+                        <span class="achievement-tag">Strategic Partnerships</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -247,19 +350,18 @@
                             <strong>Address</strong>
                             <p>C13/24, VijayGram colony, Iodhikheda, teh. Sausar, dist. Chhindwara, Madhya Pradesh 480108</p>
                         </div>
-                    </div>
-                    <div class="contact-item">
+                    </div>                    <div class="contact-item">
                         <i class="fas fa-envelope"></i>
                         <div>
                             <strong>Email</strong>
-                            <p>ravi.pandey@example.com</p>
+                            <p>ravipandey1729@gmail.com</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-phone"></i>
                         <div>
                             <strong>Phone</strong>
-                            <p>+91 XXXXX XXXXX</p>
+                            <p>+91 9111957538</p>
                         </div>
                     </div>
                 </div>
@@ -290,12 +392,10 @@
             <div class="footer-content">
                 <div class="footer-text">
                     <p>&copy; 2025 Ravi Ranjan Pandey. All rights reserved.</p>
-                </div>
-                <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                </div>                <div class="social-links">
+                    <a href="https://linkedin.com/in/ravi-pandey-6517b525b" class="social-link" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/ravipandey1729" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.instagram.com/ravipandey1729/" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
         </div>
