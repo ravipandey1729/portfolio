@@ -152,3 +152,166 @@
     0%, 100% { transform: scale(1) rotate(0deg); }
     50% { transform: scale(1.1) rotate(180deg); }
 }
+
+/* Mobile-Optimized Animations */
+@media (max-width: 768px) {
+    /* Simplified float animation for mobile performance */
+    @keyframes float-simple {
+        0%, 100% {
+            transform: translateY(0px);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+    }
+    
+    /* Reduce animation complexity on mobile */
+    .float-element {
+        animation: float-simple 4s ease-in-out infinite;
+    }
+    
+    /* Mobile menu slide-in animation */
+    @keyframes slideInFromRight {
+        0% {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        100% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+    
+    @keyframes slideOutToRight {
+        0% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        100% {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+    }
+    
+    /* Mobile navigation item stagger animation */
+    @keyframes fadeInUp {
+        0% {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    /* Touch feedback animation */
+    @keyframes touchPress {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(0.98);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+    
+    .touch-feedback {
+        animation: touchPress 0.2s ease-out;
+    }
+    
+    /* Mobile card entrance animation */
+    @keyframes mobileSlideUp {
+        0% {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    /* Scroll-triggered animations for mobile */
+    .mobile-animate-in {
+        animation: mobileSlideUp 0.6s ease-out forwards;
+    }
+    
+    /* Reduce motion for users who prefer it */
+    @media (prefers-reduced-motion: reduce) {
+        * {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+        }
+        
+        .float-element {
+            animation: none;
+        }
+          .gradient-text {
+            animation: none;
+            background: #667eea;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+}
+
+/* Tablet-specific animation adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .float-element {
+        animation: float 5s ease-in-out infinite;
+    }
+    
+    /* Reduce parallax intensity on tablets */
+    [data-parallax] {
+        transform: translateY(0) !important;
+    }
+}
+
+/* Mobile performance optimizations */
+@media (max-width: 768px) {
+    /* Force hardware acceleration for smooth animations */
+    .nav-menu,
+    .hamburger,
+    .btn,
+    .skill-card,
+    .project-card,
+    .experience-card {
+        will-change: transform;
+        transform: translateZ(0);
+        backface-visibility: hidden;
+    }
+    
+    /* Optimize transforms for mobile */
+    .nav-menu.active {
+        transform: translateX(0) translateZ(0);
+    }
+    
+    .hamburger.active .bar {
+        transform: translateZ(0);
+    }
+}
+
+/* Loading animation for mobile */
+@keyframes mobileLoader {
+    0% {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+}
+
+.mobile-loading {
+    animation: mobileLoader 1.5s ease-in-out infinite;
+}

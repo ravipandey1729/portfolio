@@ -232,7 +232,166 @@
                 ripple.remove();
             }, 600);
         });
-    }    // Initialize all creative features
+    }    // Mobile Navigation Functionality
+    function initMobileNavigation() {
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const body = document.body;
+
+        if (hamburger && navMenu) {
+            // Toggle mobile menu
+            hamburger.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+                body.classList.toggle('menu-open');
+                
+                // Prevent body scroll when menu is open
+                if (navMenu.classList.contains('active')) {
+                    body.style.overflow = 'hidden';
+                } else {
+                    body.style.overflow = '';
+                }
+            });
+
+            // Close menu when clicking on links
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                    body.classList.remove('menu-open');
+                    body.style.overflow = '';
+                });
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (navMenu.classList.contains('active') && 
+                    !navMenu.contains(e.target) && 
+                    !hamburger.contains(e.target)) {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                    body.classList.remove('menu-open');
+                    body.style.overflow = '';
+                }
+            });
+
+            // Close menu on escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                    body.classList.remove('menu-open');
+                    body.style.overflow = '';
+                }
+            });
+
+            // Handle window resize
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768) {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                    body.classList.remove('menu-open');
+                    body.style.overflow = '';
+                }
+            });
+        }
+    }
+
+    // Smooth scrolling for navigation links
+    function initSmoothScrolling() {
+        const navLinks = document.querySelectorAll('a[href^="#"]');
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    const navHeight = document.querySelector('.navbar').offsetHeight;
+                    const targetPosition = targetElement.offsetTop - navHeight - 20;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    }
+
+    // Enhanced touch interactions for mobile
+    function initMobileTouchInteractions() {
+        // Add touch feedback to cards
+        const interactiveElements = document.querySelectorAll('.skill-card, .project-card, .experience-card, .btn');
+        
+        interactiveElements.forEach(element => {
+            element.addEventListener('touchstart', function() {
+                this.style.transform = 'scale(0.98)';
+            });
+            
+            element.addEventListener('touchend', function() {
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 150);
+            });
+            
+            element.addEventListener('touchcancel', function() {
+                this.style.transform = '';
+            });
+        });
+    }
+
+    // Optimize animations for mobile performance
+    function optimizeForMobile() {
+        const isMobile = window.innerWidth <= 768;
+        
+        if (isMobile) {
+            // Reduce animation complexity on mobile
+            const floatingElements = document.querySelectorAll('.float-element');
+            floatingElements.forEach(element => {
+                element.style.animation = 'float-simple 6s ease-in-out infinite';
+            });
+            
+            // Disable parallax on mobile for better performance
+            const parallaxElements = document.querySelectorAll('[data-parallax]');
+            parallaxElements.forEach(element => {
+                element.style.transform = 'none';
+            });
+        }
+    }
+
+    // Mobile-specific scroll progress indicator
+    function initMobileScrollProgress() {
+        const progressBar = document.querySelector('.scroll-progress');
+        
+        if (progressBar) {
+            let ticking = false;
+            
+            function updateScrollProgress() {
+                const scrollTop = window.pageYOffset;
+                const docHeight = document.body.scrollHeight - window.innerHeight;
+                const scrollPercent = (scrollTop / docHeight) * 100;
+                
+                progressBar.style.width = scrollPercent + '%';
+                ticking = false;
+            }
+            
+            window.addEventListener('scroll', function() {
+                if (!ticking) {
+                    requestAnimationFrame(updateScrollProgress);
+                    ticking = true;
+                }
+            });
+        }
+    }
+
+    // Initialize all creative features
     createLoadingScreen();
     initTypingAnimation();
     initParallaxEffect();
@@ -244,3 +403,9 @@
     initMagneticButtons();
     initScrollProgress();
     enhanceThemeToggle();
+    // Initialize all mobile functions
+    initMobileNavigation();
+    initSmoothScrolling();
+    initMobileTouchInteractions();
+    optimizeForMobile();
+    initMobileScrollProgress();

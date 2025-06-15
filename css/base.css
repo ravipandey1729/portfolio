@@ -8,13 +8,39 @@ body {
     overflow-x: hidden;
     transition: all 0.3s ease;
     position: relative;
+    /* Mobile performance optimizations */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    /* Touch scrolling for iOS */
+    -webkit-overflow-scrolling: touch;
 }
 
-/* Container */
+/* Mobile-first container approach */
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 1rem;
+    width: 100%;
+}
+
+/* Responsive container sizing */
+@media (min-width: 576px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        padding: 0 2rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        padding: 0 20px;
+    }
 }
 
 /* Gradient Text */
