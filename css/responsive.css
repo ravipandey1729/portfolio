@@ -229,15 +229,17 @@
         padding: 0.2rem 0.5rem;
         margin: 0.2rem 0.3rem 0.2rem 0;
     }
-    
-    /* Contact Section */
+      /* Contact Section */
     .contact {
         padding: 3rem 0;
     }
     
     .contact-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+        padding: 0 1rem;
+    }
+    
+    .contact-info {
+        max-width: 100%;
     }
     
     .contact-info h3 {
@@ -247,6 +249,7 @@
     
     .contact-item {
         margin-bottom: 1rem;
+        justify-content: flex-start;
     }
     
     .contact-item i {
@@ -269,7 +272,6 @@
     }
 }
 
-/* Small Mobile Devices (481px - 768px) */
 /* Small Mobile Devices (481px - 768px) */
 @media (min-width: 481px) and (max-width: 768px) {
     /* Container */
@@ -403,6 +405,7 @@
 }
 
 /* Tablets (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
     
     .nav-menu li {
         margin: 1.5rem 0;
@@ -627,12 +630,13 @@
     .achievement-tag {
         font-size: 0.8rem;
         padding: 0.4rem 0.8rem;
-    }
-
-    /* Contact Section */
+    }    /* Contact Section */
     .contact-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+        padding: 0 1rem;
+    }
+    
+    .contact-info {
+        max-width: 500px;
     }
     
     .contact-info h3 {
@@ -643,25 +647,11 @@
     
     .contact-item {
         margin-bottom: 1.5rem;
-        text-align: center;
+        justify-content: flex-start;
     }
     
     .contact-item i {
         font-size: 1.2rem;
-    }
-    
-    .contact-form {
-        padding: 1.5rem;
-    }
-    
-    .form-group {
-        margin-bottom: 1.5rem;
-    }
-    
-    .form-group input,
-    .form-group textarea {
-        font-size: 1rem;
-        padding: 1rem;
     }
 
     /* Footer */
@@ -736,13 +726,8 @@
         height: 200px;
     }
     
-    .project-card,
-    .experience-card,
+    .project-card,    .experience-card,
     .skill-card {
-        padding: 1rem;
-    }
-    
-    .contact-form {
         padding: 1rem;
     }
     

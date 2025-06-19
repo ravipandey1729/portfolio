@@ -894,9 +894,14 @@ body:not(.light-theme) .about-details .detail-item p {
 }
 
 .contact-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-info {
+    max-width: 600px;
+    text-align: center;
 }
 
 .contact-info h3 {
@@ -908,8 +913,10 @@ body:not(.light-theme) .about-details .detail-item p {
 .contact-item {
     display: flex;
     align-items: flex-start;
+    justify-content: center;
     gap: 1rem;
     margin-bottom: 2rem;
+    text-align: left;
 }
 
 .contact-item i {
@@ -927,54 +934,6 @@ body:not(.light-theme) .about-details .detail-item p {
 .contact-item p {
     color: var(--text-secondary);
     margin: 0;
-}
-
-.contact-form {
-    background: var(--card-bg);
-    padding: 2rem;
-    border-radius: 15px;
-    border: 1px solid var(--border-color);
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 1rem;
-    background: var(--bg-tertiary);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    color: var(--text-primary);
-    font-family: inherit;
-    transition: all 0.3s ease;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: #667eea;
-    box-shadow: 0 0 10px rgba(102, 126, 234, 0.3);
-}
-
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-    color: var(--text-secondary);
-}
-
-/* Light theme form styles */
-body.light-theme .form-group input,
-body.light-theme .form-group textarea {
-    background: #f8f9fa;
-    border: 1px solid #dee2e6;
-    color: #212529;
-}
-
-body.light-theme .form-group input::placeholder,
-body.light-theme .form-group textarea::placeholder {
-    color: #6c757d;
 }
 
 /* Footer */
@@ -1600,12 +1559,13 @@ section {
     .achievement-tag {
         font-size: 0.8rem;
         padding: 0.4rem 0.8rem;
-    }
-
-    /* Contact Section */
+    }    /* Contact Section */
     .contact-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+        padding: 0 1rem;
+    }
+    
+    .contact-info {
+        max-width: 500px;
     }
     
     .contact-info h3 {
@@ -1616,25 +1576,11 @@ section {
     
     .contact-item {
         margin-bottom: 1.5rem;
-        text-align: center;
+        justify-content: flex-start;
     }
     
     .contact-item i {
         font-size: 1.2rem;
-    }
-    
-    .contact-form {
-        padding: 1.5rem;
-    }
-    
-    .form-group {
-        margin-bottom: 1.5rem;
-    }
-    
-    .form-group input,
-    .form-group textarea {
-        font-size: 1rem;
-        padding: 1rem;
     }
 
     /* Footer */
@@ -1710,12 +1656,7 @@ section {
     }
     
     .project-card,
-    .experience-card,
-    .skill-card {
-        padding: 1rem;
-    }
-    
-    .contact-form {
+    .experience-card,    .skill-card {
         padding: 1rem;
     }
     
